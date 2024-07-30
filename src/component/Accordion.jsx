@@ -1,31 +1,41 @@
-import React from 'react'
-import AccordionItem from './AccordionItem';
+import React, { useState } from "react";
+import AccordionItem from "./AccordionItem";
 
 function Accordion() {
-    
-const faqs = [
+    // this state is for Controlling Faq Open At A Time
+  const [isFaqOpen, setIsFaqOpen] = useState(null);
+  const faqs = [
     {
       title: "Where are these chairs assembled?",
-      text:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus."
+      text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus.",
     },
     {
       title: "How long do I have to return my chair?",
-      text:
-        "Pariatur recusandae dignissimos fuga voluptas unde optio nesciunt commodi beatae, explicabo natus."
+      text: "Pariatur recusandae dignissimos fuga voluptas unde optio nesciunt commodi beatae, explicabo natus.",
     },
     {
       title: "Do you ship to countries outside the EU?",
-      text:
-        "Excepturi velit laborum, perspiciatis nemo perferendis reiciendis aliquam possimus dolor sed! Dolore laborum ducimus veritatis facere molestias!"
-    }
+      text: "Excepturi velit laborum, perspiciatis nemo perferendis reiciendis aliquam possimus dolor sed! Dolore laborum ducimus veritatis facere molestias!",
+    },
   ];
 
   return (
-    <div className='accordion'>
-        {faqs.map((faq, i) => <AccordionItem num={i} faq={faq} key={i}/>)}
+    <div className="accordion">
+      {faqs.map((faq, i) => (
+        <AccordionItem
+          num={i}
+          faq={faq}
+          key={i}
+          isFaqOpen={isFaqOpen}
+          setIsFaqOpen={setIsFaqOpen}
+        />
+      ))}
     </div>
-  )
+  );
 }
 
-export default Accordion
+// here Accordion Item are controlling the State is open but now we want to open at a time for that we have to put that state in Parent Component who will be know that who will be open and who will be close
+
+export default Accordion;
+
+
