@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function AccordionItem({ faq, num, isFaqOpen, setIsFaqOpen }) {
   // const [isFaqOpen, setIsFaqOpen] = useState(false); this is for Open one faq at a time
