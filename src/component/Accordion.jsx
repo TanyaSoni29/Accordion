@@ -29,6 +29,7 @@ function Accordion() {
           isFaqOpen={isFaqOpen}
           setIsFaqOpen={setIsFaqOpen}
         />
+        
       ))}
     </div>
   );
@@ -38,4 +39,22 @@ function Accordion() {
 
 export default Accordion;
 
+/*text As A Children prop*/
+        /* <AccordionItem
+          num={i}
+          title={faq.title}
+         
+          key={i}
+          isFaqOpen={isFaqOpen}
+          setIsFaqOpen={setIsFaqOpen}
+        > {faq.text} </Accordion> */
+         /* <AccordionItem
+          num={i}
+          title={faq.title}
+         
+          key={i}
+          isFaqOpen={isFaqOpen}
+          setIsFaqOpen={setIsFaqOpen}
+        > <p>Hello</p>
+        <ul><li>Hello1</li><li>Hello2</li><li>Hello3</li></ul> </Accordion> */
 
